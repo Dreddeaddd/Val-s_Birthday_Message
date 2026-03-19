@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Cake 🎂</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function exitPage(){
+    window.close();
+    window.location.href = "index.html";
+}
+</script>
+
+<body class="center">
+
+<audio id="cakeMusic" autoplay loop>
+    <source src="Happy Birthday (Funny Indian Remix).mp3" type="audio/mp3">
+</audio>
+
+<script>
+window.onload = function(){
+document.getElementById("cakeMusic").play();
+}
+</script>
+
+<div class="fireworks">
+    <span></span><span></span><span></span><span></span>
+</div>
+
+<!-- <div class="sparkle-container">
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+    <span class="sparkle"></span>
+</div> -->
+
+
+<div class="fireworks">
+    <div class="firework firework1"></div>
+    <div class="firework firework2"></div>
+    <div class="firework firework3"></div>
+</div>
+
+<div class="cake-container">
+
+    <div class="candles">
+        <div class="number-candle candle2">
+            2
+            <div class="flame"></div>
+        </div>
+
+        <div class="number-candle candle3">
+            3
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <div class="cake-wrapper">
+        <div class="cake-layer top"></div>
+        <div class="cake-layer middle"></div>
+        <div class="cake-layer bottom"></div>
+    </div>
+
+</div>
+
+<div class="final-message">
+✨ May your smile stay bright, your dreams stay alive, and your heart stay happy always 💖
+</div>
+
+<button class="exitBtn" onclick="exitPage()">Exit 💖</button>
+
+</body>
+
+<script src="cake.js"></script>
+</html>

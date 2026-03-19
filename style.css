@@ -1,0 +1,529 @@
+body{
+margin:0;
+font-family:Arial;
+background:#fff0f6;
+overflow:hidden;
+}
+
+/* Sparkles */
+.sparkle-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+.sparkle{
+position:absolute;
+width:8px;
+height:8px;
+background:white;
+border-radius:50%;
+box-shadow:0 0 10px rgba(245, 109, 129, 0.9),
+           0 0 20px rgba(252, 48, 82, 0.7);
+animation: floatSparkle linear infinite, twinkle 10s infinite alternate;
+}
+
+/* Random sparkle positions */
+.sparkle:nth-child(1){
+left:10%;
+top:90%;
+animation-duration:8s;
+}
+
+.sparkle:nth-child(2){
+left:25%;
+top:95%;
+animation-duration:10s;
+}
+
+.sparkle:nth-child(3){
+left:40%;
+top:85%;
+animation-duration:7s;
+}
+
+.sparkle:nth-child(4){
+left:55%;
+top:92%;
+animation-duration:9s;
+}
+
+.sparkle:nth-child(5){
+left:70%;
+top:88%;
+animation-duration:11s;
+}
+
+.sparkle:nth-child(6){
+left:80%;
+top:94%;
+animation-duration:8s;
+}
+
+.sparkle:nth-child(7){
+left:90%;
+top:90%;
+animation-duration:10s;
+}
+
+.sparkle:nth-child(8){
+left:50%;
+top:96%;
+animation-duration:9s;
+}
+
+/* Floating upward */
+@keyframes floatSparkle{
+0%{
+transform:translateY(0) scale(1);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+@keyframes twinkle{
+from{
+opacity:5;
+}
+to{
+opacity:10;
+}
+}
+
+/* First page */
+.center{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+}
+
+.surprise-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+.bongo-cat{
+width:130px;
+transform: rotate(-12.9deg) translateY(38px);
+pointer-events: none;
+}
+
+@keyframes bounce{
+0%,100%{
+transform: rotate(-8deg) translateY(20px);
+}
+50%{
+transform: rotate(-8deg) translateY(10px);
+}
+}
+
+/* Countdown big number */
+
+.openBtn{
+padding:12px 25px;
+font-size:20px;
+border:none;
+border-radius:20px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+}
+
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.popup-content{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(255,182,193,0.8);
+width:90%;
+max-width:350px;
+}
+
+.photo{
+width:180px;
+border-radius:15px;
+}
+
+.nextBtn{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+}
+
+/* Letter Page */
+/* Heart Letter */
+.letter-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+}
+
+/* Heart container to center heart */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* take available space to center vertically */
+}
+
+/* Heart Letter */
+.heart-letter {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #ffb6c1;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(255,105,180,0.6);
+
+    /* Smooth continuous heartbeat */
+    animation: smoothHeartBeat 1.2s ease-in-out infinite;
+}
+
+/* Heart top circles */
+.heart-letter::before,
+.heart-letter::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #ffb6c1;
+    border-radius: 50%;
+}
+
+.heart-letter::before { top: -150px; left: 0; }
+.heart-letter::after { left: 150px; top: 0; }
+
+/* Heartbeat animation */
+@keyframes smoothHeartBeat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    14%, 28% { transform: rotate(-45deg) scale(1.05); }
+    42%, 70% { transform: rotate(-45deg) scale(0.95); }
+}
+
+/* Text inside heart */
+.letter-content {
+    position: absolute;
+    width: 180px;
+    transform: rotate(45deg);
+    text-align: center;
+    z-index: 2;
+    color: white;
+    padding: 10px;
+}
+
+.letter-content h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+#typedText {
+    font-size: 13px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Next button outside heart at bottom */
+.nextBtn {
+    margin-top: 30px; /* spacing from heart */
+    padding: 12px 24px;
+    background: #ff4da6;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,105,180,0.5);
+}
+
+.nextBtn:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
+/* Cake */
+.cake-container{
+position:relative;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:40px;
+}
+
+/* Cake rise */
+.cake-wrapper{
+position:relative;
+display:flex;
+flex-direction:column;
+align-items:center;
+animation:riseCake 3s ease forwards;
+opacity:0;
+transform:translateY(150px);
+}
+
+/* Cake layers */
+.cake-layer{
+height:50px;
+border-radius:15px;
+margin-top:5px;
+position:relative;
+}
+
+.top{
+width:160px;
+background:#ffd1dc;
+}
+
+.middle{
+width:190px;
+background:#ffb6c1;
+}
+
+.bottom{
+width:220px;
+background:#ff99bb;
+}
+
+/* Chocolate dripping */
+.cake-layer::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:18px;
+background:#5c3317;
+border-radius:15px 15px 10px 10px;
+}
+
+/* chocolate drips */
+.cake-layer::after{
+content:"";
+position:absolute;
+top:10px;
+left:15%;
+width:12px;
+height:20px;
+background:#5c3317;
+border-radius:0 0 10px 10px;
+box-shadow:
+35px 5px #5c3317,
+70px 0 #5c3317,
+105px 8px #5c3317;
+}
+
+
+
+/* Candles container */
+.candles{
+display:flex;
+gap:5px;
+margin-bottom:-10px;
+z-index:2;
+
+opacity:0;
+transform:translateY(20px);
+
+animation:candleFade 3s ease forwards;
+animation-delay:4s;
+}
+
+/* Realistic numbered candle */
+.number-candle{
+width:28px;
+height:70px;
+background:white;
+border-radius:8px;
+font-size:28px;
+font-weight:bold;
+color:#ff4da6;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+position:relative;
+box-shadow:inset -3px 0 rgba(0,0,0,0.08);
+cursor:pointer;
+}
+
+/* flame */
+.flame{
+width:14px;
+height:22px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:-22px;
+left:50%;
+transform:translateX(-50%);
+animation:flicker 0.3s infinite alternate;
+}
+
+/* flame flicker */
+@keyframes flicker{
+from{
+transform:translateX(-50%) scale(1);
+opacity:0.8;
+}
+to{
+transform:translateX(-50%) scale(1.2);
+opacity:1;
+}
+}
+
+/* candle fade in */
+@keyframes candleFade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Cake rise */
+@keyframes riseCake{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Realistic Fireworks */
+.fireworks{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+overflow:hidden;
+}
+
+.firework{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+box-shadow:
+0 -40px pink,
+28px -28px pink,
+40px 0 pink,
+28px 28px pink,
+0 40px pink,
+-28px 28px pink,
+-40px 0 pink,
+-28px -28px pink;
+animation: explode 2s infinite ease-out;
+opacity:0;
+}
+
+/* positions */
+.firework1{
+top:20%;
+left:20%;
+animation-delay:0s;
+}
+
+.firework2{
+top:25%;
+left:70%;
+animation-delay:0.8s;
+}
+
+.firework3{
+top:15%;
+left:50%;
+animation-delay:1.5s;
+}
+
+
+/* explosion */
+@keyframes explode{
+0%{
+transform:scale(0);
+opacity:1;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:scale(2.5);
+opacity:0;
+}
+}
+
+/* Cake show */
+@keyframes showCake{
+to{
+opacity:1;
+}
+}
+
+.final-message{
+margin-top:20px;
+font-size:18px;
+color:#ff4da6;
+text-align:center;
+padding:10px;
+z-index:2;
+}
+
+
+.exitBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:10px 20px;
+background:#ff4da6;
+color:white;
+border:none;
+border-radius:25px;
+font-size:14px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,105,180,0.5);
+z-index:10;
+}
+
+.exitBtn:hover{
+transform:scale(1.05);
+}
