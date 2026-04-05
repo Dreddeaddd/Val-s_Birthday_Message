@@ -958,8 +958,10 @@ body {
 
 /* Polaroid Gallery */
 .gallery-page {
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .gallery-container {
