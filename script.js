@@ -45,15 +45,96 @@ function showPopup() {
     });
 }
 
-/* typing text */
-const text = `Happy Birthday Val  
-I hope today brings you happiness, peace, and beautiful memories.
+/* Drag to Unwrap Gift Box Logic */
+const lid = document.getElementById("giftLid");
+const bongo = document.getElementById("bongoCat");
 
-You deserve all the love and good things life can offer.
+if (lid && bongo) {
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
 
-Thank you for being someone truly special.
+    lid.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startY = e.clientY - currentY;
+        lid.style.transition = "none";
+        bongo.style.transition = "none";
+    });
 
-Enjoy your day 💖`;
+    window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        currentY = e.clientY - startY;
+        // Limit drag completely down, allow drag up
+        if (currentY > 10) currentY = 10;
+        
+        lid.style.transform = `translateY(${currentY}px)`;
+        bongo.style.transform = `translateX(-50%) translateY(${currentY}px) rotate(-13deg)`;
+
+        // If dragged up enough, pop open!
+        if (currentY < -60) {
+            isDragging = false;
+            openGift();
+        }
+    });
+
+    window.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        lid.style.transition = "transform 0.3s ease";
+        bongo.style.transition = "transform 0.3s ease";
+        currentY = 0;
+        lid.style.transform = `translateY(0px)`;
+        bongo.style.transform = `translateX(-50%) translateY(0px) rotate(-15deg)`;
+    });
+
+    // Touch support
+    lid.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        startY = e.touches[0].clientY - currentY;
+        lid.style.transition = "none";
+        bongo.style.transition = "none";
+    });
+    
+    window.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        currentY = e.touches[0].clientY - startY;
+        if (currentY > 10) currentY = 10;
+        lid.style.transform = `translateY(${currentY}px)`;
+        bongo.style.transform = `translateX(-50%) translateY(${currentY}px) rotate(-15deg)`;
+        if (currentY < -60) {
+            isDragging = false;
+            openGift();
+        }
+    });
+
+    window.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        lid.style.transition = "transform 0.3s ease";
+        bongo.style.transition = "transform 0.3s ease";
+        currentY = 0;
+        lid.style.transform = `translateY(0px)`;
+        bongo.style.transform = `translateX(-50%) translateY(0px) rotate(-15deg)`;
+    });
+
+    function openGift() {
+        document.getElementById("giftContainer").style.display = 'none';
+        showPopup();
+    }
+}
+
+
+
+const text = `Happy Birthday to my kalaban always
+
+Tumatanda ka nanaman bossing HAHAHA dejoke lang.
+
+beh habang tumatanda tayo sana hindi magbabago kung ano man ang nabuo nating friendship kasi isa ka 
+sa mga importanteng tao sa buhay ko. Alam ko may mga bagay na hindi tayo nagkakasundo pero kahit ganun ay 
+naghahanap ka always ng way to fix the problem.
+
+Sana sa simpleng ginawa ko para sayo ay mapaligaya ka at maramdaman mong kahit sino 
+ay meron paring taong gusto na mag effort para sayo, sa ngayon ako muna HAHAHHAHAHAHAH Bleh.`;
 
 let i = 0;
 

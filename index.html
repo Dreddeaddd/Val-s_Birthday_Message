@@ -23,9 +23,14 @@
 </div>
 
 <div class="surprise-box">
-<img src="bongo-cat-transparent.gif" class="bongo-cat">
-
-<button class="openBtn" onclick="showPopup()">  Click me please  </button>
+    <div class="gift-container" id="giftContainer">
+        <img src="bongo-cat-transparent.gif" class="bongo-cat" id="bongoCat">
+        <div class="gift-box" id="giftBox">
+            <div class="gift-bottom"></div>
+            <div class="gift-lid" id="giftLid"></div>
+        </div>
+        <div class="drag-hint" id="dragHint">Drag lid up to unwrap!</div>
+    </div>
 </div>
 
 <div id="popup" class="popup">
@@ -43,6 +48,7 @@
 </div>
 
 <script src="script.js"></script>
+<script src="trails.js"></script>
 
 </body>
 </html>
