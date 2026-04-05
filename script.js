@@ -130,11 +130,11 @@ const text = `Happy Birthday to my kalaban always
 Tumatanda ka nanaman bossing HAHAHA dejoke lang.
 
 beh habang tumatanda tayo sana hindi magbabago kung ano man ang nabuo nating friendship kasi isa ka 
-sa mga importanteng tao sa buhay ko. Alam ko may mga bagay na hindi tayo nagkakasundo pero kahit ganun ay 
-naghahanap ka always ng way to fix the problem.
+sa mga importanteng tao sa buhay ko. Alam ko may mga bagay rin tayong hindi napagkakasundo pero kahit ganun ay 
+gumagawa ka ka always ng way to fix our little the problem, may pagka-avoidan attachment issue pa naman ako.
 
-Sana sa simpleng ginawa ko para sayo ay mapaligaya ka at maramdaman mong kahit sino 
-ay meron paring taong gusto na mag effort para sayo, sa ngayon ako muna HAHAHHAHAHAHAH Bleh.`;
+this simple hardwork of mine sana ay mapaligaya ka at maramdaman mong kahit sino 
+ay meron paring taong gusto na mag effort para sayo, syempre sa ngayon ako muna wala kapang bebe boi ehh HAHAHHAHAHAHAH Bleh.`;
 
 let i = 0;
 
